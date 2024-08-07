@@ -1,17 +1,42 @@
 {
-  "name": "qore-pieces",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc",
-    "lint": "eslint \"{src,apps,libs}/**/*.ts\" --fix"
+  "name": "@qoretechnologies/qorus-actions-catalogue",
+  "version": "0.0.1",
+  "description": "Catalogue of actions for Qorus",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qoretechnologies/qorus-actions-catalogue.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "scripts": {
+    "start": "nodemon --exec ts-node src/index.ts",
+    "build:test": "./node_modules/typescript/bin/tsc --noEmit --p tsconfig.build.json",
+    "lint": "eslint \"{src,apps,libs}/**/*.ts\" --fix",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "typesafe-i18n": "typesafe-i18n"
+  },
+  "keywords": [
+    "qorus",
+    "actions",
+    "catalogue"
+  ],
+  "author": "Qore Technologies",
+  "license": "MIT",
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.6.1",
+    "@qoretechnologies/reqore": "^0.48.3",
+    "@storybook/addon-essentials": "^8.2.7",
+    "@storybook/addon-interactions": "^8.2.7",
+    "@storybook/addon-links": "^8.2.7",
+    "@storybook/addon-onboarding": "^8.2.7",
+    "@storybook/blocks": "^8.2.7",
+    "@storybook/react": "^8.2.7",
+    "@storybook/react-vite": "^8.2.7",
+    "@storybook/test": "^8.2.7",
     "@types/node": "^20.14.12",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.17.0",
     "@typescript-eslint/parser": "^7.17.0",
     "eslint": "^8.57.0",
@@ -22,9 +47,18 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-promise": "^6.6.0",
     "eslint-plugin-security": "^3.0.1",
-    "typescript": "^5.5.4"
+    "eslint-plugin-storybook": "^0.8.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "storybook": "^8.2.7",
+    "typescript": "^5.5.4",
+    "vite": "^5.3.5"
   },
   "dependencies": {
-    "axios": "^1.7.2"
+    "@qoretechnologies/ts-toolkit": "^0.4.2",
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "i18n": "^0.15.1",
+    "typesafe-i18n": "^5.26.2"
   }
 }
